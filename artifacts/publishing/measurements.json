@@ -1,0 +1,80 @@
+[
+  {
+    "view": "preview",
+    "viewport": 390,
+    "frames": [
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "overflow": false
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "view": "catalogue",
+    "viewport": 390,
+    "width": 169.5,
+    "height": 127.125,
+    "fit": "contain",
+    "position": "50% 50%"
+  },
+  {
+    "width": 326,
+    "height": 244.5,
+    "fit": "contain",
+    "position": "50% 50%",
+    "padding": "12px",
+    "src": "/assets/phone.jpg",
+    "overflow": false
+  },
+  {
+    "view": "preview",
+    "viewport": 1280,
+    "frames": [
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "overflow": false
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "overflow": false
+      }
+    ]
+  },
+  {
+    "view": "catalogue",
+    "viewport": 1280,
+    "width": 368,
+    "height": 276,
+    "fit": "contain",
+    "position": "50% 50%"
+  },
+  {
+    "width": 384,
+    "height": 288,
+    "fit": "contain",
+    "position": "50% 50%",
+    "padding": "12px",
+    "src": "/assets/phone.jpg",
+    "overflow": false
+  }
+]

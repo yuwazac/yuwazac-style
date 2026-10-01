@@ -1,0 +1,236 @@
+[
+  {
+    "size": "mobile",
+    "view": "admin-preview",
+    "frames": [
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 350,
+        "height": 262.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 350,
+        "imageHeight": 262.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  },
+  {
+    "size": "mobile",
+    "view": "catalogue",
+    "frames": [
+      {
+        "width": 169.5,
+        "height": 127.125,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 169.5,
+        "imageHeight": 127.125,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  },
+  {
+    "size": "mobile",
+    "view": "product-detail",
+    "frames": [
+      {
+        "width": 326,
+        "height": 244.5,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 326,
+        "imageHeight": 244.5,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  },
+  {
+    "size": "desktop",
+    "view": "admin-preview",
+    "frames": [
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      },
+      {
+        "width": 400,
+        "height": 300,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 400,
+        "imageHeight": 300,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  },
+  {
+    "size": "desktop",
+    "view": "catalogue",
+    "frames": [
+      {
+        "width": 411.5,
+        "height": 308.625,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 411.5,
+        "imageHeight": 308.625,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  },
+  {
+    "size": "desktop",
+    "view": "product-detail",
+    "frames": [
+      {
+        "width": 384,
+        "height": 288,
+        "fit": "contain",
+        "position": "50% 50%",
+        "padding": "12px",
+        "imageWidth": 384,
+        "imageHeight": 288,
+        "naturalWidth": 800,
+        "background": "rgb(240, 239, 235)"
+      }
+    ]
+  }
+]

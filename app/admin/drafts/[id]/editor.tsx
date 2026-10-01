@@ -5,19 +5,21 @@ import {Button} from '@/components/ui/button';
 
 export default function DraftEditor({initial}:{initial:DraftProduct}){
   const [product,setProduct]=useState(initial);
-  const [testStock,setTestStock]=useState(String(initial.status==='draft'?(initial.testStock??0):initial.stock));
   const [busy,setBusy]=useState(false);
   const [dirty,setDirty]=useState(false);
   const [error,setError]=useState('');
   const [message,setMessage]=useState('');
   async function save(event:React.FormEvent<HTMLFormElement>){
-    event.preventDefault();setBusy(true);setError('');setMessage('');
+    event.preventDefault();
+    const stockInput=event.currentTarget.elements.namedItem('testStock') as HTMLInputElement;
+    const testStock=stockInput.valueAsNumber;
     const form=new FormData(event.currentTarget);
-    const body={name:String(form.get('name')),description:String(form.get('description')),images:String(form.get('images')).split(/\r?\n/).map(s=>s.trim()).filter(Boolean),category:form.get('category')||null,sellingPriceMYR:String(form.get('sellingPriceMYR')),processingEstimate:String(form.get('processingEstimate')),deliveryEstimate:String(form.get('deliveryEstimate')),action:(event.nativeEvent as SubmitEvent).submitter?.getAttribute('value')||'save',testStock:Number(testStock),version:product.revision||product.createdAt};
+    setBusy(true);setError('');setMessage('');
+    const body={name:String(form.get('name')),description:String(form.get('description')),images:String(form.get('images')).split(/\r?\n/).map(s=>s.trim()).filter(Boolean),category:form.get('category')||null,sellingPriceMYR:String(form.get('sellingPriceMYR')),processingEstimate:String(form.get('processingEstimate')),deliveryEstimate:String(form.get('deliveryEstimate')),action:(event.nativeEvent as SubmitEvent).submitter?.getAttribute('value')||'save',testStock,version:product.revision||product.createdAt};
     try{
       const response=await fetch(`/api/admin/drafts/${encodeURIComponent(product.id)}`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       const data=await response.json();if(!response.ok)throw Error(data.error);
-      setProduct(data.product);setTestStock(String(data.product.status==='draft'?(data.product.testStock??0):data.product.stock));setDirty(false);setMessage(data.product.status==='published'?'Published in the local shop. Checkout remains test-only.':'Draft saved. Preview shows this saved version.');
+      setProduct(data.product);setDirty(false);setMessage(data.product.status==='published'?'Published in the local shop. Checkout remains test-only.':'Draft saved. Preview shows this saved version.');
     }catch(e){setError(e instanceof Error?e.message:'Could not save this draft.');}finally{setBusy(false);}
   }
   return <>
@@ -39,7 +41,7 @@ export default function DraftEditor({initial}:{initial:DraftProduct}){
         <label>Processing estimate<input name="processingEstimate" maxLength={200} placeholder="e.g. 2–3 business days before dispatch" defaultValue={product.processingEstimate||''}/></label>
         <label>Delivery estimate<input name="deliveryEstimate" maxLength={200} placeholder="e.g. 7–12 business days after dispatch to Malaysia" defaultValue={product.deliveryEstimate||''}/></label>
         <label htmlFor="local-test-stock">Local Test Stock (test inventory)</label>
-        <input id="local-test-stock" name="testStock" type="number" required min={0} max={10000} step={1} value={testStock} onChange={event=>setTestStock(event.target.value)} aria-describedby="test-stock-help"/>
+        <input id="local-test-stock" name="testStock" type="number" required min={0} max={10000} step={1} defaultValue={product.status==='draft'?(product.testStock??0):product.stock} aria-describedby="test-stock-help"/>
         <p id="test-stock-help" className="muted">Local test inventory only. Enter at least 1 unit to publish. This quantity is not live CJ stock and is not synced with the supplier.</p>
         <p className="muted">Publishing requires a title, category, positive MYR price, image, processing and delivery estimates, and positive local test stock. This stock is not synced with CJ.</p>
         <p className="muted">Estimates are your draft copy. Saving does not verify supplier shipping terms. Price, category and other unfinished fields can remain blank.</p>

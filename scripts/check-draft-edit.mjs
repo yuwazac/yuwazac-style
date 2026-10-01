@@ -121,10 +121,11 @@ try{
       await page.getByRole('button',{name:'Publish to local shop',exact:true}).click();
       assert.equal((await publishRequest).postDataJSON().testStock,4);
       await page.getByText('Published in the local shop. Checkout remains test-only.',{exact:true}).waitFor();
-      assert.equal((await request(editPath)).value.product.status,'published');
+      const publishedProduct=(await request(editPath)).value.product;
+      assert.equal(publishedProduct.status,'published');assert.equal(publishedProduct.stock,4);
       const measurements=[];
       const artifactDir=join(process.cwd(),'artifacts','publishing');mkdirSync(artifactDir,{recursive:true});
-      for(const width of [390,1280]){
+      for(const width of (process.env.TEST_STOCK_ONLY?[]:[390,1280])){
         await page.setViewportSize({width,height:900});
         await page.goto(origin+previewPath);
         await page.locator('.product-detail-image img').evaluateAll(imgs=>Promise.all(imgs.map(img=>img.decode())));
@@ -152,8 +153,8 @@ try{
         await page.getByRole('button',{name:'Add to bag →',exact:true}).click();
         await page.waitForFunction(id=>(localStorage.getItem('ys-local-bag')||'').includes(id),id);
       }
-      writeFileSync(join(artifactDir,'measurements.json'),JSON.stringify(measurements,null,2));
-      console.log('PASS: browser Edit/Publish, product visibility, mobile/desktop catalogue/detail/preview layout and add-to-bag.',JSON.stringify(measurements));
+      if(process.env.TEST_STOCK_ONLY)console.log('PASS: Local Test Stock input sends testStock: 4 and publishes with 4 local test units.');
+      else{writeFileSync(join(artifactDir,'measurements.json'),JSON.stringify(measurements,null,2));console.log('PASS: browser Edit/Publish, product visibility, mobile/desktop catalogue/detail/preview layout and add-to-bag.',JSON.stringify(measurements));}
     }finally{await browser.close();}
   }
   assert.equal((await request('/api/products')).value.products.find(p=>p.id===id).priceCents,4929);
